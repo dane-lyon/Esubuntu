@@ -1,4 +1,5 @@
-ESUBUNTU
+
+#ESUBUNTU
 Présentation du projet Esubuntu
 
 ESUBUNTU a été développé par Olivier Calpetard du lycée Antoine Roussin à La Réunion. A la DANE de Lyon, nous avons essayé de le scripter le plus possible afin de faciliter son déploiement. Il permet :
