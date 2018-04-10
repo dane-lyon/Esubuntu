@@ -60,7 +60,7 @@ sudo ./firefox/prof_firefox.sh
 #on inscrit la tache upkg dans crontab
 #avant je fesait sudo crontab -e
 
-echo "*/15 *  * * * root /etc/esubuntu/groupe.sh" > /etc/crontab
+echo "*/20 *  * * * root /etc/esubuntu/groupe.sh" > /etc/crontab
 
 echo "C'est fini ! bienvenue dans le groupe $salle..."
 exit
