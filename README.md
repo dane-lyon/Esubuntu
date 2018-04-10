@@ -23,15 +23,17 @@ La partie "Esubuntu" n'est pas compatible avec Ubuntu/Gnome 18.04 !
 1. Créer un nouveau groupe ESU (via la console ESU) pour vos clients Linux, par exemple "posteslinux"
 2. Télécharger le contenu de l'archive et le décompresser 
 Lien ici : https://github.com/dane-lyon/Esubuntu/archive/master.zip
-3. Copier le dossier "postelinux" dans R:/icones
-4. Copier le dossier "linux" dans le dossier esu
-5. Ensuite sur le poste client Ubuntu, Lancer 
-https://raw.githubusercontent.com/dane-lyon/clients-linux-scribe/master/ubuntu-et-variantes-integrdom.sh
-1. Une nouvelle question sera posée "voulez-vous activer esu_ubuntu" : répondre "Oui".
-1. Le nom du groupe esu sera demandé, il faudra mettre exactement le même nom que le nouveau groupe esu créé précédemment.
-1. A la fin, redémarrer le poste.
+3. Copier le dossier "postelinux" dans R:/icones; contient la configuration de conky a personnaliser
+4. Copier le dossier "linux" dans le dossier du groupe ESU; contient la configuration firefoxe, upkg et gset
+5. Copier les fichiers Admin.txt Eleve.txt et Prof.txt dans le dossier du groups ESU ; contient le chemin du fond d'écran
+6. Ensuite sur le poste client Ubuntu, Lancer 
+recupérer l'archive précécente ou https://github.com/dane-lyon/Esubuntu/archive/master.zip
+7. le décompresser et faire un chmod +x * du dossier
+8. ce positionnner dans le dossier en mode console et lancer "sudo ./install_esubuntu.sh"
+9. Le nom du groupe esu sera demandé, il faudra mettre exactement le même nom que le nouveau groupe esu créé précédemment.
+pur changer le nom du groupe il faut lancer "sudo ./modifie_groupe_esu.sh"
+et voila c'est fini, redémarrer le poste.
 
-A noter la présence d'un script à lancer sur des postes déjà intégrés au domaine : https://raw.githubusercontent.com/dane-lyon/clients-linux-scribe/master/Esubuntu_minimal.sh
 
 #### Paramétrage de upkg (équivalent de WPKG pour Windows)
 
@@ -87,5 +89,4 @@ modifier ou ajouter avec précaution vos régle de personnalisation (par exemple
 * Dernière précision : si vous avez un Scribe en version 2.4, 2.5 ou 2.6, pensez à faire ceci pour avoir les partages réseaux :
 https://dane.ac-lyon.fr/spip/Client-Linux-activer-les-partages
 
-Ubuntu 16.04 :
-![Ubuntu 16](https://framapic.org/L6QaKVozF0qH/9ZOEjWqbw4Zn.png)
+
