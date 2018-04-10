@@ -10,7 +10,7 @@ Il permet :
 * déport de la configuration de Firefox
 * Personnalisation de l'interface utilisateur
 
-![Esubuntu en action](https://framapic.org/vSTaLit0PjRu/pA1mI9wIMjNm.png)
+![Esubuntu en action](https://framapic.org/c1on2a82srbH/JBfkDgCwhmdZ.png)
 
 
 ### Mise en place d'Esubuntu 
