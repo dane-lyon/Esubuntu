@@ -8,6 +8,7 @@ Il permet :
 * d'obtenir des fonds d'écran différents entre élèves et enseignants (admin aura le fond prof)
 * d'avoir un panel d'informations en fond : nom du poste, personne connectée, adresse IP, quota... 
 * déport de la configuration de Firefox
+* Personnalisation de l'interface utilisateur
 
 ![Esubuntu en action](https://framapic.org/vSTaLit0PjRu/pA1mI9wIMjNm.png)
 
@@ -76,6 +77,11 @@ Par exemple, si l'adresse IP du poste ne s'affichage pas dans conky, c'est proba
 
 * La config de Firefox est déporté aussi dans le groupe_esu. Il est ainsi possible de modifier la page d’accueil et le proxy de tous les postes d'un seul coup, pour cela il faut modifier le fichier "firefox.js" dans le dossier "linux" du groupe esu.
 _Attention : le proxy est géré aussi par ce fichier, par défaut il est paramétré sur 172.16.0.252, si l'on a autre chose, bien penser à modifier la valeur._
+
+* Personnalisation de l'interface utilisateur:
+Dans le dossier linux/gset se trouve des fichiers texte selon l'interface graphique utilisé (faire un echo $XDG_CURRENT_DESKTOP)
+modifier ou ajouter avec précaution vos régle de personnalisation (par exemple modifier le théme par defaut ou afficher l'heure etc.....).
+
 * Dernière précision : si vous avez un Scribe en version 2.4, 2.5 ou 2.6, pensez à faire ceci pour avoir les partages réseaux :
 https://dane.ac-lyon.fr/spip/Client-Linux-activer-les-partages
 
