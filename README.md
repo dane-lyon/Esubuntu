@@ -2,10 +2,11 @@
 
 ### Présentation du projet Esubuntu
 
-ESUBUNTU a été développé par Olivier Calpetard du lycée Antoine Roussin à La Réunion. A la DANE de Lyon, nous avons essayé de le scripter le plus possible afin de faciliter son déploiement.
+ESUBUNTU a été développé par Olivier Calpetard du lycée Antoine Roussin à La Réunion. 
 Il permet :
 * de lancer des commandes de manière centralisée (installation d'applications, scripts...)
 * d'obtenir des fonds d'écran différents entre élèves et enseignants (admin aura le fond prof)
+* de faire redescendre les icones sur les bureau utilisateur en fonction du groupe (eleve prof ou admin)
 * d'avoir un panel d'informations en fond : nom du poste, personne connectée, adresse IP, quota... 
 * déport de la configuration de Firefox
 * Personnalisation de l'interface utilisateur
@@ -16,7 +17,7 @@ Il permet :
 ### Mise en place d'Esubuntu 
 
 _**RAPPEL : validé/testé pour Ubuntu/Unity en 14.04 et 16.04 ainsi que Ubuntu Mate 16.06/18.04)**_
-La partie "Esubuntu" n'est pas compatible avec Ubuntu/Gnome 18.04 !
+en attente de validation avec Ubuntu/Gnome 18.04 !
 
 #### Mise en place du script
 
