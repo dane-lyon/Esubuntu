@@ -1,0 +1,8 @@
+gsettings set com.canonical.indicator.session show-real-name-on-panel true
+gsettings set com.canonical.Unity integrated-menus true
+dconf write /org/compiz/profiles/unity/plugins/unityshell/icon-size 32
+gsettings set com.canonical.Unity always-show-menus true
+gsettings set org.gnome.desktop.interface gtk-theme 'Ambiance'
+gsettings set org.gnome.desktop.interface icon-theme 'ubuntu-mono-dark'
+gsettings set org.gnome.desktop.interface cursor-theme 'DMZ-White'
+gsettings set org.gnome.desktop.wm.preferences theme 'Ambiance'

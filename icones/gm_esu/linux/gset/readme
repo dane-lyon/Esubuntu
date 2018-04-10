@@ -1,0 +1,5 @@
+utilisation de gsettings ubuntu sert a personnaliser l'interface utilisateur
+bien mettre ligne par ligne
+pour avoir le nom de l'interface faire echo $XDG_CURRENT_DESKTOP sur le pc
+et creer un fichiet texte nommé gset_(nom de l'interface)
+
