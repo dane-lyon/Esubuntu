@@ -24,7 +24,7 @@ sudo mkdir /etc/esubuntu/
 sudo chmod 777 /usr/local/upkg_client
 
 #installation de cntlm zenity et conky
-sudo apt-get install cntlm zenity conky
+sudo apt-get install cntlm zenity conky conky-all
 
 #configuration de cntlm système pour ne pas faire d'interférence avec celui de lutilisateur
 #mais je pense que l'on peut lenlever du systeme demarrage
@@ -58,16 +58,13 @@ echo "$salle" > /etc/GM_ESU
 sudo ./firefox/prof_firefox.sh
 
 #on inscrit la tache upkg dans crontab
-#avant je fesait sudo crontab -e
 
 echo "*/20 *  * * * root /etc/esubuntu/groupe.sh" > /etc/crontab
 
 echo "C'est fini ! bienvenue dans le groupe $salle..."
-exit
 
+#on enleve l'execution de cntlm au démarrage (qui sert pour le proxy authentifiant)
+rm -f /etc/xdg/autostart/cntlm*
 
-
-echo "C'est fini ! 
-
-Pour compléter le système installer un serveur apt-cacher et un poste pour gérer les impressions des autre"
+echo Pour compléter le système installer un serveur apt-cacher
 exit
