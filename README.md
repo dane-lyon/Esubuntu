@@ -25,7 +25,7 @@ en attente de validation avec Ubuntu/Gnome 18.04 !
 2. Télécharger le contenu de l'archive et le décompresser 
 Lien ici : https://github.com/dane-lyon/Esubuntu/archive/master.zip
 3. Copier le dossier "postelinux" dans R:/icones; contient la configuration de conky a personnaliser
-4. Copier le dossier "linux" dans le dossier du groupe ESU; contient la configuration firefoxe, upkg et gset
+4. Copier le dossier "linux" dans le dossier du groupe ESU; contient la configuration firefoxe, upkg, gset, message a personnaliser.
 5. Copier les fichiers Admin.txt Eleve.txt et Prof.txt dans le dossier du groups ESU ; contient le chemin du fond d'écran
 6. Ensuite sur le poste client Ubuntu, Lancer 
 recupérer l'archive précécente ou https://github.com/dane-lyon/Esubuntu/archive/master.zip
