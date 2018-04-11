@@ -4,7 +4,7 @@
 #### installation et complement script dane de lyon ####
 # - installation du pc dans un groupe et gestion proxy authentifie
 # - ver 2.0.2
-# - 20 Mars 2018
+# - 10 Avril 2018
 # - CALPETARD Olivier - AMI - lycee Antoine ROUSSIN
 
 #############################################
@@ -16,6 +16,20 @@ then
   exit 
 fi 
 
+# Téléchargement des paquets
+git  clone https://github.com/dane-lyon/Esubuntu.git
+
+ 
+
+#determiner le repertoire de lancement
+updatedb
+locate version_esubuntu.txt > files_tmp
+sed -i -e "s/version_esubuntu.txt//g" files_tmp
+read chemin < files_tmp
+echo $chemin
+
+chmod -R +x $chemin
+
 
 #creation du dossier upkg et esubuntu
 sudo mkdir /usr/local/upkg_client/
@@ -24,24 +38,17 @@ sudo mkdir /etc/esubuntu/
 sudo chmod 777 /usr/local/upkg_client
 
 #installation de cntlm zenity et conky
-sudo apt-get install cntlm zenity conky conky-all
+sudo apt-get install zenity conky
 
-#configuration de cntlm système pour ne pas faire d'interférence avec celui de lutilisateur
-#mais je pense que l'on peut lenlever du systeme demarrage
-# a modifier
-echo "Username	admin
-Domain		SCRIBE
-Auth	LM
-Proxy		172.18.40.1:3128
-NoProxy		localhost, 127.0.0.*, 172.18.*
-Listen		3129" > /etc/cntlm.conf
+
+
 
 
 #on lance la copie des fichier
 
-sudo cp ./esubuntu/* /etc/esubuntu/
+sudo cp "$chemin"esubuntu/* /etc/esubuntu/
 sudo chmod +x /etc/esubuntu/*.sh
-sudo cp ./xdg_autostart/* /etc/xdg/autostart/
+sudo cp "$chemin"xdg_autostart/* /etc/xdg/autostart/
 sudo chmod +x /etc/xdg/autostart/cntlm.desktop
 sudo chmod +x /etc/xdg/autostart/message_scribe.desktop
 sudo chmod +x /etc/xdg/autostart/scribe_background.desktop
@@ -55,16 +62,42 @@ read salle
 echo "$salle" > /etc/GM_ESU
 
 #on lance le script prof_firefox en mode sudo 
-sudo ./firefox/prof_firefox.sh
+
+sudo "$chemin"firefox/prof_firefox.sh
 
 #on inscrit la tache upkg dans crontab
+#avant je fesait sudo crontab -e
 
-echo "*/20 *  * * * root /etc/esubuntu/groupe.sh" > /etc/crontab
+echo "*/15 *  * * * root /etc/esubuntu/groupe.sh" > /etc/crontab
+
+##############################################################################
+### Utilisation d'un proxy authentifiant
+##############################################################################
+read -p "Voulez-vous activer laprise en charge du proxy authentifiant? [o/N] :" proxauth
+
+########################################################
+# Téléchargement + Mise en place du proxy authentifiant
+########################################################
+if [ "$proxauth" = "O" ] || [ "$proxauth" = "o" ] ; then 
+
+sudo "$chemin"install_proxy_auth.sh
+
+else
+
+# supression du cntlm 
+  rm -f /etc/xdg/autostart/cntlm*
+  rm -f /etc/esubuntu/cntlm.sh
+  rm -f /etc/esubuntu/reconf_cntlm.sh
+  rm -f /etc/esubuntu/param_etab.conf
+
+fi
 
 echo "C'est fini ! bienvenue dans le groupe $salle..."
+exit
 
-#on enleve l'execution de cntlm au démarrage (qui sert pour le proxy authentifiant)
-rm -f /etc/xdg/autostart/cntlm*
 
-echo Pour compléter le système installer un serveur apt-cacher
+
+echo "C'est fini ! 
+
+Pour compléter le système installer un serveur apt-cacher et un poste pour gérer les impressions des autre"
 exit
