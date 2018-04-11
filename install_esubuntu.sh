@@ -17,7 +17,7 @@ then
 fi 
 
 # Téléchargement des paquets
-git  clone https://github.com/dane-lyon/Esubuntu.git
+#git  clone https://github.com/dane-lyon/Esubuntu.git
 
  
 
@@ -91,13 +91,7 @@ else
   rm -f /etc/esubuntu/param_etab.conf
 
 fi
-
 echo "C'est fini ! bienvenue dans le groupe $salle..."
-exit
 
-
-
-echo "C'est fini ! 
-
-Pour compléter le système installer un serveur apt-cacher et un poste pour gérer les impressions des autre"
+echo "Pour compléter le système installer un serveur apt-cacher et un poste pour gérer les impressions des autre"
 exit
