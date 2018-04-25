@@ -58,8 +58,8 @@ fi
 wallpaper=$(cat /tmp/netlogon/icones/$gm_esu/$variable.txt)
 
 #pour ubuntu mate
-if [ "$XDG_CURRENT_DESKTOP" = "Mate" ] ; then
-   gsettings set org.mate.background picture-filename "file:///"$wallpaper""
+if [ "$XDG_CURRENT_DESKTOP" = "MATE" ] ; then
+   gsettings set org.mate.background picture-filename "$wallpaper"
    else
    gsettings set org.gnome.desktop.background picture-uri "file:///"$wallpaper""
 fi
