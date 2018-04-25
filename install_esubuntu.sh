@@ -38,10 +38,11 @@ sudo mkdir /etc/esubuntu/
 sudo chmod 777 /usr/local/upkg_client
 
 #installation de cntlm zenity et conky
-sudo apt-get install zenity conky
-
-
-
+if [ "$version" = "trusty" ] || [ "$version" = "xenial" ] ; then  #ajout du ppa uniquement pour trusty et xenial
+    add-apt-repository -y ppa:vincent-c/conky #conky est backporté pour avoir une version récente quelque soit la distrib
+    apt-get update
+fi
+apt-get install -y zenity conky
 
 
 #on lance la copie des fichier
