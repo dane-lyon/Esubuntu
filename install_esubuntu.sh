@@ -42,7 +42,7 @@ if [ "$version" = "trusty" ] || [ "$version" = "xenial" ] ; then  #ajout du ppa 
     add-apt-repository -y ppa:vincent-c/conky #conky est backporté pour avoir une version récente quelque soit la distrib
     apt-get update
 fi
-apt-get install -y zenity conky
+apt-get install -y zenity conky conky-all
 
 
 #on lance la copie des fichier
