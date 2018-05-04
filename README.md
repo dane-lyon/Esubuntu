@@ -24,21 +24,21 @@ en attente de validation avec Ubuntu/Gnome 18.04 !
 1. Créer un nouveau groupe ESU (via la console ESU) pour vos clients Linux, par exemple "posteslinux"
 2. Télécharger le contenu de l'archive et le décompresser 
 Lien ici : https://github.com/dane-lyon/Esubuntu/archive/master.zip
-3. Copier le dossier "postelinux" dans R:/icones; contient la configuration de conky a personnaliser
-4. Copier le dossier "linux" dans le dossier du groupe ESU; contient la configuration firefoxe, upkg, gset, message a personnaliser.
+3. Copier le dossier "posteslinux" dans R:/icones; contient la configuration de conky et proxy_etab.pac a personnaliser
+4. Copier le dossier "linux" dans le dossier du groupe ESU; contient la configuration firefox, upkg, gset, message a personnaliser.
 5. Copier les fichiers Admin.txt Eleve.txt et Prof.txt dans le dossier du groups ESU ; contient le chemin du fond d'écran
 6. Ensuite sur le poste client Ubuntu, Lancer 
 recupérer l'archive précécente ou git clone https://github.com/dane-lyon/Esubuntu.git
-7. le décompresser et faire un chmod +x * du dossier
+7. le décompresser et faire un chmod -R +x * du dossier
 8. ce positionnner dans le dossier en mode console et lancer "sudo ./install_esubuntu.sh"
 9. Le nom du groupe esu sera demandé, il faudra mettre exactement le même nom que le nouveau groupe esu créé précédemment.
 pur changer le nom du groupe il faut lancer "sudo ./modifie_groupe_esu.sh"
-10. Pour la prise en charge du proxy authentifiant répondre au diversi question posées et changer votre valeur proxy par 127.0.0.1:3128 (ci c'est le port que vous avez choisi.
+10. Pour la prise en charge du proxy authentifiant répondre au divers question posées et changer votre valeur proxy par 127.0.0.1:3128 (ci c'est le port que vous avez choisi.
 A la première connection sur un pc linux; un script controle la présence d'un fichier cntlm.conf dans "document" utilisateur
 si il existe il ne fait rien
-sion un pop-up s'ouvre et demande à l'utilisateur de tapez son mot de passe session
+sinon un pop-up s'ouvre et demande à l'utilisateur de tapez son mot de passe session
 et normalement plus aucune fenêtre d'authentification ne s'afficheras
-un raccourcis sur le bureau "depannage_internet" (a copier dans _Machine/Bureau du groupe esu) est à pour relancer la procédure
+un raccourcis sur le bureau "depannage_internet" (a copier dans _Machine/Bureau du groupe esu) est là pour relancer la procédure
 -trouble possible : mot de passe expiré ou trop long (12 caractère maximun)
 et voila c'est fini, redémarrer le poste.
 
