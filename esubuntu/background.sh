@@ -3,8 +3,8 @@
 #### changement de fond ecran ouverture de session ubuntu ####
 # - récupère la valeur du groupe et attribut en fonction les fond ecran génére par esu
 # - gestion des restriction gsetting
-# - ver 2.0.1
-# - 20 mars 2018
+# - ver 2.0.2
+# - 3 mai 2018
 # - CALPETARD Olivier
 
 #les fichiers se trouvent dans icones$ 
@@ -67,16 +67,12 @@ fi
 #lancement de conky avec lecture du fichier de conf
 conky -c /tmp/netlogon/icones/posteslinux/conky/conky.cfg
 
-#lancement du gpo lecture fichier txt dans gset du groupe esu
-#determine l interface
+#lancement du gpo lecture fichier gset du groupe esu
 
-interface=gset_$XDG_CURRENT_DESKTOP
-
-#on lit le fichier gset en fonction de la session
-while read gio  
-do   
-$gio 
-done < /tmp/netlogon/icones/$gm_esu/linux/gset/$interface.txt
+cp /tmp/netlogon/icones/$gm_esu/linux/gset/gset.sh /tmp
+chmod +x /tmp/gset.sh
+/tmp/gset.sh
+rm /tmp/gset.sh
 
 
 exit 0
