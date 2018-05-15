@@ -1,1 +1,1 @@
-/tmp/netlogon/icones/eleve.jpg
+/usr/share/wallpaper/Eleve.jpg
