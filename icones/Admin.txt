@@ -1,1 +1,1 @@
-/tmp/netlogon/icones/admin.jpg
+/usr/share/wallpaper/Admin.jpg
