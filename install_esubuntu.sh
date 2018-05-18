@@ -1,10 +1,8 @@
 #!/bin/bash
-
-
 #### installation et complement script dane de lyon ####
 # - installation du pc dans un groupe et gestion proxy authentifie
-# - ver 2.0.2
-# - 10 Avril 2018
+# - ver 2.0.3
+# - 18 Mai 2018
 # - CALPETARD Olivier - AMI - lycee Antoine ROUSSIN
 
 #############################################
@@ -19,7 +17,14 @@ fi
 # Téléchargement des paquets
 #git  clone https://github.com/dane-lyon/Esubuntu.git
 
- 
+# Affectation à la variable "version" suivant la variante utilisé
+. /etc/lsb-release
+if [ "$DISTRIB_RELEASE" = "14.04" ] || [ "$DISTRIB_RELEASE" = "17" ] || [ "$DISTRIB_RELEASE" = "17.3" ] ; then
+  version=trusty # Ubuntu 14.04 / Linux Mint 17/17.3
+fi
+if [ "$DISTRIB_RELEASE" = "16.04" ] || [ "$DISTRIB_RELEASE" = "18" ] || [ "$DISTRIB_RELEASE" = "18.3" ] || [ "$(echo "$DISTRIB_RELEASE" | cut -c -3)" = "0.4" ] ; then
+  version=xenial # Ubuntu 16.04 / Linux Mint 18/18.3 / Elementary OS 0.4.x
+fi
 
 #determiner le repertoire de lancement
 updatedb
@@ -29,7 +34,6 @@ read chemin < files_tmp
 echo $chemin
 
 chmod -R +x $chemin
-
 
 #creation du dossier upkg et esubuntu
 sudo mkdir /usr/local/upkg_client/
@@ -46,7 +50,6 @@ apt-get install -y zenity conky conky-all
 
 
 #on lance la copie des fichier
-
 sudo cp "$chemin"esubuntu/* /etc/esubuntu/
 sudo chmod +x /etc/esubuntu/*.sh
 sudo cp "$chemin"xdg_autostart/* /etc/xdg/autostart/
@@ -80,19 +83,16 @@ read -p "Voulez-vous activer laprise en charge du proxy authentifiant? [o/N] :" 
 # Téléchargement + Mise en place du proxy authentifiant
 ########################################################
 if [ "$proxauth" = "O" ] || [ "$proxauth" = "o" ] ; then 
-
-sudo "$chemin"install_proxy_auth.sh
-
+  sudo "$chemin"install_proxy_auth.sh
 else
-
-# supression du cntlm 
+  # supression du cntlm 
   rm -f /etc/xdg/autostart/cntlm*
   rm -f /etc/esubuntu/cntlm.sh
   rm -f /etc/esubuntu/reconf_cntlm.sh
   rm -f /etc/esubuntu/param_etab.conf
-
 fi
-echo "C'est fini ! bienvenue dans le groupe $salle..."
 
-echo "Pour compléter le système installer un serveur apt-cacher et un poste pour gérer les impressions des autre"
-exit
+## 3 dernières lignes non activés car ce script est appelé par l'autre (intgrdom) et il ne faut pas interrompre pendant l'install
+#echo "C'est fini ! bienvenue dans le groupe $salle..."
+#echo "Pour compléter le système installer un serveur apt-cacher et un poste pour gérer les impressions des autre"
+#exit
