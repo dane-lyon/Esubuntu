@@ -27,6 +27,8 @@ Lien ici : https://github.com/dane-lyon/Esubuntu/archive/master.zip
 3. Copier le dossier "posteslinux" dans R:/icones; contient la configuration de conky et proxy_etab.pac a personnaliser
 4. Copier le dossier "linux" dans le dossier du groupe ESU; contient la configuration firefox, upkg, gset, message a personnaliser.
 5. Copier les fichiers Admin.txt Eleve.txt et Prof.txt dans le dossier du groups ESU ; contient le chemin du fond d'écran
+NB : Le plus rapide est de récupérer directement l'archive ici : https://github.com/dane-lyon/clients-linux-scribe/raw/master/ds_votre_groupe_esu.zip
+et de décompresser puis mettre tous le contenu dans votre nouveau groupe esu.
 6. Ensuite sur le poste client Ubuntu, Lancer 
 recupérer l'archive précécente ou git clone https://github.com/dane-lyon/Esubuntu.git
 7. le décompresser et faire un chmod -R +x * du dossier
