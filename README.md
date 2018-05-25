@@ -21,12 +21,12 @@ en attente de validation avec Ubuntu/Gnome 18.04 !
 
 #### Mise en place du script
 
-1. Créer un nouveau groupe ESU (via la console ESU) pour vos clients Linux, par exemple "posteslinux"
+1. Créer un nouveau groupe ESU (via la console ESU) pour vos clients Linux, par exemple "s207"
 2. Télécharger le contenu de l'archive et le décompresser 
 Lien ici : https://github.com/dane-lyon/Esubuntu/archive/master.zip
 3. Copier le dossier "posteslinux" dans R:/icones; contient la configuration de conky et proxy_etab.pac a personnaliser
-4. Copier le dossier "linux" dans le dossier du groupe ESU; contient la configuration firefox, upkg, gset, message a personnaliser.
-5. Copier les fichiers Admin.txt Eleve.txt et Prof.txt dans le dossier du groups ESU ; contient le chemin du fond d'écran
+4. Copier le dossier "linux" dans le dossier du groupe ESU que vous avez créé précédement; il contient la configuration firefox, upkg, gset, message a personnaliser.
+5. Copier les fichiers Admin.txt Eleve.txt et Prof.txt dans le dossier du groups ESU créé précédement; contient le chemin du fond d'écran
 NB : Le plus rapide est de récupérer directement l'archive ici : https://github.com/dane-lyon/clients-linux-scribe/raw/master/ds_votre_groupe_esu.zip
 et de décompresser puis mettre tous le contenu dans votre nouveau groupe esu.
 6. Ensuite sur le poste client Ubuntu, Lancer 
