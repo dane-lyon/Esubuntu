@@ -9,7 +9,7 @@ Il permet :
 * de faire redescendre les icones sur les bureau utilisateur en fonction du groupe (eleve prof ou admin)
 * d'avoir un panel d'informations en fond : nom du poste, personne connectée, adresse IP, quota... 
 * déport de la configuration de Firefox
-* Personnalisation de l'interface utilisateur
+* Personnalisation du profil utilisateur
 
 ![Esubuntu en action](https://framapic.org/c1on2a82srbH/JBfkDgCwhmdZ.png)
 
@@ -17,7 +17,7 @@ Il permet :
 ### Mise en place d'Esubuntu 
 
 _**RAPPEL : validé/testé pour Ubuntu/Unity en 14.04 et 16.04 ainsi que Ubuntu Mate 16.06/18.04)**_
-en attente de validation avec Ubuntu/Gnome 18.04 !
+ avec Ubuntu/Gnome 18.04 les icones du bureau demande une confirmation d'éxécution
 
 #### Mise en place du script
 
@@ -35,7 +35,7 @@ recupérer l'archive précécente ou git clone https://github.com/dane-lyon/Esub
 8. ce positionnner dans le dossier en mode console et lancer "sudo ./install_esubuntu.sh"
 9. Le nom du groupe esu sera demandé, il faudra mettre exactement le même nom que le nouveau groupe esu créé précédemment.
 pur changer le nom du groupe il faut lancer "sudo ./modifie_groupe_esu.sh"
-10. Pour la prise en charge du proxy authentifiant répondre au divers question posées et changer votre valeur proxy par 127.0.0.1:3128 (ci c'est le port que vous avez choisi.
+10. Pour la prise en charge du proxy authentifiant répondre au divers question posées ( ou modifier les valeurs par defaut dans install_proxy_auth.sh) et changer votre valeur proxy par 127.0.0.1:3128 (ci c'est le port que vous avez choisi).
 A la première connection sur un pc linux; un script controle la présence d'un fichier cntlm.conf dans "document" utilisateur
 si il existe il ne fait rien
 sinon un pop-up s'ouvre et demande à l'utilisateur de tapez son mot de passe session
@@ -85,16 +85,18 @@ A noté que depuis votre client linux, vous pouvez directement accéder/modifier
 
 ### Paramétrages complémentaires
 
-* Il est possible de personnaliser le panel conky en allant dans son groupe ESU puis "conky" et enfin fichier "conky.cfg"
+* Il est possible de personnaliser le panel conky en allant dans son icones/posteslinux puis "conky" et enfin fichier "conky.cfg"
 
 Par exemple, si l'adresse IP du poste ne s'affichage pas dans conky, c'est probablement parceque l'interface réseau de vos postes n'a pas le mme nom que celle indiqué dans conky dans ce cas il vous suffit de regarder (via la commande "ifconfig") le nom de votre interface réseau et de remplacer dans le fichier conky.cfg "${addr eth0}" par "${addr VotreInterface}"
 
-* La config de Firefox est déporté aussi dans le groupe_esu. Il est ainsi possible de modifier la page d’accueil et le proxy de tous les postes d'un seul coup, pour cela il faut modifier le fichier "firefox.js" dans le dossier "linux" du groupe esu.
-_Attention : le proxy est géré aussi par ce fichier, par défaut il est paramétré sur 172.16.0.252, si l'on a autre chose, bien penser à modifier la valeur._
+* La config de Firefox est déporté aussi dans le groupe_esu. Il est ainsi possible de modifier la page d’accueil et le proxy de tous les postes du groupe esu d'un seul coup, pour cela il faut modifier le fichier "firefox.js" dans le dossier "linux" du groupe esu.
+_Attention : le proxy est géré aussi par ce fichier, par défaut il est paramétré sur 172.16.0.252, si l'on a autre chose, bien penser à modifier la valeur._ 
+
+spécificité pour proxy authantifiant ac-reunion vers metice : modifier les valeurs du proxy dans posteslinux/proxy_etab.pac
 
 * Personnalisation de l'interface utilisateur:
-Dans le dossier linux/gset se trouve des fichiers texte selon l'interface graphique utilisé (faire un echo $XDG_CURRENT_DESKTOP)
-modifier ou ajouter avec précaution vos régle de personnalisation (par exemple modifier le théme par defaut ou afficher l'heure etc.....).
+Dans le dossier linux/gset se trouve un fichiers gset.sh qui est executé a chaque ouverture de session
+modifier ou ajouter avec précaution vos régle de personnalisation (par exemple modifier le théme par defaut ou afficher l'heure ou executer une commande particulière etc.....).
 
 * Dernière précision : si vous avez un Scribe en version 2.4, 2.5 ou 2.6, pensez à faire ceci pour avoir les partages réseaux :
 https://dane.ac-lyon.fr/spip/Client-Linux-activer-les-partages
