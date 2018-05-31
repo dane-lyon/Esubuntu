@@ -1,6 +1,6 @@
 #!/bin/bash
 #### partie de configuration de conky ####
-# - récupère la valeur du groupe et attribut en fonction les fond ecran 
+# - récupère la valeur du groupe et classe pour affiche dans conky sur le bureau 
 # - ver 1.0.3
 # - 31 Juin 2018
 # - CALPETARD Olivier - AMI - lycee Antoine ROUSSIN
