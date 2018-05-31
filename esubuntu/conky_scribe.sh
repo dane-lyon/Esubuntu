@@ -6,30 +6,28 @@
 # - CALPETARD Olivier - AMI - lycee Antoine ROUSSIN
 # - le fichiers conf de conky se trouve dans icone/postelinux/conky/conky.cfg
 
+#groupe machine
 gm_esu=grp_eole
 if [ -f "/etc/GM_ESU" ];then
 
 gm_esu=$(cat /etc/GM_ESU)
 fi
 
-#administratif = 10000 prof = 10001 eleve = 10002
-sleep 3
-if [ $GROUPS -eq 10000 ]
- then
-   variable=Admin
+#groupe et classe utilisateurs
+groups $USER > $HOME/gr.txt
+tail $HOME/gr.txt | cut -d" " -f4-15 > $HOME/gr_classe.txt
+tail $HOME/gr.txt | cut -d" " -f3 > $HOME/gr_scribe.txt
+g_esu=$(cat $HOME/gr_scribe.txt)
+g_classe=$(cat $HOME/gr_classe.txt)
 
-elif [ $GROUPS -eq 10001 ]
- then
-   variable=Prof
 
-elif [ $GROUPS -eq 10002 ]
- then
-   variable=Eleve
-
-else [ $GROUPS -lt 10000 ]
-	variable=Local
+if [ $GROUPS -eq 10002 ]
+then
+sed 's/domainUsers//g' $HOME/gr_classe.txt
+echo -e "\t Bureau : $g_esu"
+echo -e "\t Groupe : $gm_esu"
+else
+echo -e "Bureau : $g_esu"
+echo -e "\t Groupe : $gm_esu"
 fi
-
-echo  Bureau : $variable
-echo -e " \t Groupe : $gm_esu"
 exit 0
