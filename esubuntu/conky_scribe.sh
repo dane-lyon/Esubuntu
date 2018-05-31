@@ -15,7 +15,7 @@ fi
 
 #groupe et classe utilisateurs
 groups $USER > $HOME/gr.txt
-tail $HOME/gr.txt | cut -d" " -f4-15 > $HOME/gr_classe.txt
+tail $HOME/gr.txt | cut -d" " -f4-6 > $HOME/gr_classe.txt
 tail $HOME/gr.txt | cut -d" " -f3 > $HOME/gr_scribe.txt
 g_esu=$(cat $HOME/gr_scribe.txt)
 g_classe=$(cat $HOME/gr_classe.txt)
