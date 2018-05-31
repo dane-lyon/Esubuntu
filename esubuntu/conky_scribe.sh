@@ -1,8 +1,8 @@
 #!/bin/bash
 #### partie de configuration de conky ####
 # - récupère la valeur du groupe et attribut en fonction les fond ecran 
-# - ver 1.0.0
-# - 03 Avril 2017
+# - ver 1.0.3
+# - 31 Juin 2018
 # - CALPETARD Olivier - AMI - lycee Antoine ROUSSIN
 # - le fichiers conf de conky se trouve dans icone/postelinux/conky/conky.cfg
 
