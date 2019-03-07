@@ -16,7 +16,7 @@ killall cntlm
 
 #On crée le formulaire en stockant les valeurs de sortie dans $cfgpass :/
 cfgpass=`zenity --forms \
-    --title="Connection proxy $NOM_ETAB" \
+    --title="Connexion proxy $NOM_ETAB" \
 	--text="$LOGNAME Entre ton mot de passe réseau pour te connecter à internet"\
     --add-password="mot de passe réseau pédagogique" \
     --separator="|"`
