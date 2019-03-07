@@ -35,7 +35,7 @@ echo "controle presense cntlm.conf";
 	echo "Impossible d'accéder aux fichiers !"
 #On crée le formulaire en stockant les valeurs de sortie dans $cfgpass :/
 cfgpass=`zenity --forms \
-    --title="Connection proxy $NOM_ETAB" \
+    --title="Connexion proxy $NOM_ETAB" \
     --text="$LOGNAME Entrez vos paramètres d'authentifications sur le RESEAU PEDAGOGIQUE"\
     --add-password="Entrez votre mot de passe" \
     --separator="|"`
